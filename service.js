@@ -13,7 +13,6 @@ angular.module('lolApp').service('mainService',function($http,$q) {
     for(key in res) {
       resolveArray.push(res[key]);
     }
-
     deferred.resolve(resolveArray);
   });
   return deferred.promise;

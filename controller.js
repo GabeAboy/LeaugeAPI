@@ -8,6 +8,12 @@ angular.module('lolApp').controller('mainCtrl', function($scope, mainService) {
     });
   };
   $scope.getUsers();
-  $scope.name= 'gabe';
+  // $scope.name= champ;
+
+  $scope.selectChamp = function(champ) {
+    console.log(champ);
+
+  };
+
 
 });

@@ -7,11 +7,25 @@
 </head>
 <body ng-controller="mainCtrl">
 
-<div ng-repeat="char in chars">
-  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/champion/{{char.image.full}}" alt="">
+
+<div id = "header">
+  <div class = "centered">
+    <div class = "delete"></div>
+
+  </div>
+
+  <input ng-model = "searchChamp" placeholder="Search by name">
+  <div class = "playerBox" id = "playerOne"></div>
+  <div class = "playerBox" id = "playerTwo"></div>
 </div>
 
-  {{name}}
+ <selector id = "champContainer">
+    <div ng-click = "selectChamp(char)" class = "champSelect" ng-repeat="char in chars | orderBy: 'name'">
+        <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/champion/{{char.image.full}}" alt="">
+    </div>
+</selector>
+
+
   <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.js"></script>
   <script src="app.js"></script>
   <script src="controller.js"></script>
