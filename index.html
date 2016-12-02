@@ -14,13 +14,19 @@
 
   </div>
 
-  <input ng-model = "searchChamp" placeholder="Search by name">
-  <div class = "playerBox" id = "playerOne"></div>
-  <div class = "playerBox" id = "playerTwo"></div>
+  <input ng-model = "champFilter.name" placeholder="Search by name">
+  <div class = "playerBox" id = "playerOne">
+    <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/champion/{{playerOne.image.full}}" alt="Player1">
+
+  </div>
+  <div class = "playerBox" id = "playerTwo">
+      <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/champion/{{playerTwo.image.full}}" alt="Player2">
+  </div>
+  <button ng-click = "lockIn()">LockIn</button>
 </div>
 
  <selector id = "champContainer">
-    <div ng-click = "selectChamp(char)" class = "champSelect" ng-repeat="char in chars | orderBy: 'name'">
+    <div ng-click = "selectChamp(char)" class = "champSelect" ng-repeat="char in chars | filter: champFilter | orderBy: 'name'">
         <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/champion/{{char.image.full}}" alt="">
     </div>
 </selector>
