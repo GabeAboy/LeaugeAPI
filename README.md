@@ -20,11 +20,18 @@
 3. DONE
 5. DONE
 *Comments on 3 and 5*
-3 should also reference type or have buttons for that like lol does
-5 should not be able to override click over playerTwo
-  and should start a timer
-1. Make this into routing
-1. Need to match the champion picks with their prototypical meta info
+3 should also reference type or have buttons for that like lol does ------------
+5 should not be able to override click over playerTwo DONE
+  and should start a timer DONE
+1. Make this into routing DONE
+1. Need to match the champion picks with their prototypical meta info DONE
    send that to next frame
-2. ng-repeat each spell and place their full length image
-3. place health and resource bar
+2. ng-repeat each spell and place their full length image DEC 3
+3. place health and resource bar DEC 3
+
+#December 3
+1. transfer picks into battle frame DONE
+2. match id's and make api request to get their spells DONE
+3. API to get base stats DONE
+4. displays DONE
+5. style each state

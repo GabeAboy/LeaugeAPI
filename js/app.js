@@ -12,7 +12,7 @@ angular.module('lolApp', ['ui.router'])
           .state('battle',{
               url:'/battle/:playerOne/:playerTwo',
               templateUrl: "../views/battle/battleArena.html",
-
+              controller: "battleController"
           })
           .state('win',{
               url:'/win',

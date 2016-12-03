@@ -1,2 +1,18 @@
-HEY
-{{playerOne}}
+<players>
+
+  <div>
+    <img class = "battleImg" id = "playerOne" ng-src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{playerOneName}}_0.jpg" alt="Player2">
+  </div>
+  <div>
+    <img class = "battleImg" id = "playerTwo" ng-src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{playerTwoName}}_0.jpg" alt="Player2">
+  </div>
+
+
+</players>
+<div ng-repeat = "one in oneImgArray">
+  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/spell/{{one}}" alt="">
+</div>
+
+<div ng-repeat = "two in twoImgArray">
+  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/spell/{{two}}" alt="">
+</div>

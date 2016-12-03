@@ -24,7 +24,7 @@ angular.module('lolApp').controller('mainCtrl', function($scope, mainService,$st
   if($scope.playerOne && $scope.playerTwo){
     setTimeout(function () {
       $state.transitionTo('battle',{playerOne:$scope.playerOne.id,playerTwo:$scope.playerTwo.id});
-    }, 4000);
+    }, 1000);
 
   }
   //if(player two defined move on to countdown)

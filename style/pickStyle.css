@@ -1,5 +1,6 @@
 .champSelect{float: left;
             }
+
 .playerBox{  height: 100px;
              width: 100px;
              background-color: black;
@@ -36,3 +37,6 @@
                 display: flex;
                 justify-content: center;
                 flex-wrap: wrap;}
+#playerOne{float:left;}
+#playerTwo{float:right;}
+player{width:100vw;}
