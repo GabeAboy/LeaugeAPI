@@ -29,4 +29,12 @@ https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?champData=spells
 has id, name , image
 https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?champData=image&api_key=RGAPI-51fc2f7e-849d-4e46-bc7a-546378e4dac0
 
+this has base stats
+https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion/21?champData=stats&api_key=RGAPI-51fc2f7e-849d-4e46-bc7a-546378e4dac0
+
+just stells
+https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion/21?champData=spells&api_key=RGAPI-51fc2f7e-849d-4e46-bc7a-546378e4dac0
+
+
+
 */
