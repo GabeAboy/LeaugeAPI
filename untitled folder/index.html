@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #hp div{background-color:red;
+    margin-bottom: 1px;width:10px; height:10%;}
+    #hp{height:110px;width: 10px;}
+  </style>
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="hp"></div>
+  <script>
+    for(var i = 0; i < 10; i++){
+      var div = document.createElement('div');
+      document.getElementById('hp').appendChild(div)
+    }
+
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+body{padding: 0;
+     margin: 0;
+    }
+.champSelect{float: left;
+            }
+
+.backGround{width: 100vw;height: 100vh;
+            position: relative;}
+.pImgBox{width:100px;height:100px;}
+.delete{width: 50%;height:100%;
+        background-color: white;}
+.spells{float: left;
+        width: 100%;}
+#playerOne{ position: absolute;
+            top: 30%;
+            left: 35%;
+          }
+#playerTwo{ position: absolute;
+            top:30%;
+            left: 58%;
+          }
+.centered{
+          width: 50vw;
+          height: 30vh;
+          float: right;
+          background-color: blue;
+        }
+
+.health-bar-outer {
+
+  height: 100px;
+  width: 30px;
+  position: relative;
+  border: solid 1px black;
+
+  .health-bar-inner {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: green;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+ /*SELECT*/
+.champSelect{ float:left;
+            }
+.introText{width: 100vw;height:45vh;
+
+           }
+
+.hpBox{background-color:red;height: 5px;width: 5px;}
+.hpContain{height: 100px;}
+
+.btn {
+  position: relative;
+  display: block;
+  width: 250px;
+  margin: 20px auto;
+  padding: 10px;
+
+  background-color: #fff;
+  border: 1px solid #ccc;
+
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transform-style: flat;
+  transition: all 250ms ease-out;
+
+  &:before,
+  &:after {
+      content: "";
+      position: absolute;
+      z-index: -2;
+    	transition: all 250ms ease-out;
+  }
+}
+.paper-raise {
+  &:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &:hover {
+    border: 5px solid #fff;
+
+    &:before {
+			box-shadow: 0 20px 15px -5px rgba(31, 31, 31, 0.5);
+    }
+  }
+}
+.introText{
+  width: 50%;
+  margin: 0 auto;
+
+  text-align: center;
+  .introText-inner{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.battleLeft-inner {
+  text-align: center;
+  height: 80%;
+}
+.vicContain{
+  // background-image: url(../lolPics/vic.png);
+  // background-size:contain;
+  // background-repeat: no-repeat;
+  width: 100vw;height: 100vh;
+  .winner{
+
+  }
+  .loser{
+
+  }
+}
+.vicBackground{max-width: 100%;max-height:100%;}
+
+.char-stats-container {
+  width: 50%;
+  display: inline-block;
+  height: 100%;
+}
+.champImg{}
+
+
+
+.char-box {
+  width: calc(100%/3);
+  display: inline-block;
+  height: 100%;
+  float: left;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  .mana-box{background-color: blue;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;}
+  .health-box{
+    background-color: red;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+}
+.victory{
+
+  width: 100vw;height: 100vh;
+
+  .img{
+    width: 100%;height: 100%;
+    background-image: url(../lolPics/vic.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    .vic{position: absolute;left:72%;
+    bottom:70%;}
+    .los{position: absolute;left: 22%;
+    bottom: 70%;}
+    .vicbox{
+      width: 100px;height: 100px;
+    }
+  }
+
+
+}
+.battleImg{width:100%;height:100%;}
+
+
+#header{width: 100vw;height:30vh;
+        background-color: red;
+        position: relative;
+        justify-content: center;
+      }
+
+#champContainer{width: 100vw;height:70vh;
+                overflow: auto;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;}
+
+player{width:100vw;}
+players{
+        margin: 0;
+        padding: 0;}
+
+.battleLeft{
+  background-image: url(../lolPics/texture.jpeg);
+          background-repeat: repeat;
+            padding-top: 5%;
+            width:49vw;height:100vh;
+            float: left;
+            }
+
+
+playBtn{width:50px;height: 50px;
+        }
+  header{width:100vw;height: 55vh;
+         position: relative;
+         background-image: url(../lolPics/tf.png);
+         background-repeat: no-repeat;
+         background-size: cover;
+         background-position: center;
+        }
+  header h1{color: white;
+            font-size: 50px;
+            font-family: "Lucida Bright",Georgia,serif}
+  .cont{position: absolute;
+       right: 0;left:0;
+       top:15%;
+       text-align: center;
+  }
+
+  .spellList{display: inline;}
+  .logo{width: 100%;height: 100%;
+        }
+
+  .lego{width:100vw;text-align: center;}
+  #versus{height:50px;width:50px;position: absolute;
+          left: 48%;bottom: 40%;}
+  footer{width: 100vw;height:45vh;
+         background-color: white;
+
+       }
+.rank{height:55vh;background-color: red;display: inline-block;}
+  .lockIn{height:25px;width:100px;
+
+          background: red; /* For browsers that do not support gradients */
+          background: -webkit-linear-gradient(red, yellow); /* For Safari 5.1 to 6.0 */
+          background: -o-linear-gradient(red, yellow); /* For Opera 11.1 to 12.0 */
+          background: -moz-linear-gradient(red, yellow); /* For Firefox 3.6 to 15 */
+          background: linear-gradient(red, yellow); /* Standard syntax (must be last) */
+  }

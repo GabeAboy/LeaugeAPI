@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="lolApp">
 <head>
-  <link rel="stylesheet" href="./style/indexStyle.css">
-  <link rel="stylesheet" href="./style/battleStyle.css">
-  <link rel="stylesheet" href="./style/pickStyle.css">
-  <link rel="stylesheet" href="./style/victoryStyle.css">
+  <link rel="stylesheet" href="./build/main.css">
+
   <meta charset="UTF-8">
   <title>League of Legends</title>
 </head>
 <body ng-controller="mainCtrl">
-  <p><a ui-sref="pick">Click me to pick</a></p>
   <ui-view></ui-view>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
@@ -19,5 +16,9 @@
   <script src="./js/battle/battleController.js"></script>
   <script src="./js/battle/battleService.js"></script>
   <script src="./js/pick/pickService.js"></script>
+  <script src="./js/dirtest.js"></script>
+  <script src="./js/mainSrv.js"></script>
+  <script src="./js/winlose.js"></script>
+  <script src="./js/hp.js"></script>
 </body>
 </html>

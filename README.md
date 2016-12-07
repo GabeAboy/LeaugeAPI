@@ -35,3 +35,18 @@
 3. API to get base stats DONE
 4. displays DONE
 5. style each state
+
+#December 4
+5.
+  a. build intro page
+6. style battle page, make the game work
+#December 5 - 7
+
+  1. I added Sass
+  2. Made victory page and controller
+  3. key strokes qwer uiop for player one and two
+      invokes a function in battleService that calculated
+      health and mana
+  4. Conditions in battleController to tell who wins or loses and sends to a new state with transitionTo
+  5. I also styled intro page
+  6. made functional directive for the health&mana bars

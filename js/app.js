@@ -5,6 +5,10 @@ angular.module('lolApp', ['ui.router'])
               url:'/',
               templateUrl: "index.html"
           })
+          .state('intro',{
+            url:"/intro",
+            templateUrl:"../views/intro.html"
+          })
           .state('pick',{
               url:'/pick',
               templateUrl: "../views/pick/champPick.html"
@@ -15,11 +19,12 @@ angular.module('lolApp', ['ui.router'])
               controller: "battleController"
           })
           .state('win',{
-              url:'/win',
+              url:'/win/:winner/:loser',
               templateUrl: "../views/victory/victoryBoard.html",
+              controller: "winlose"
 
           });
 
         $urlRouterProvider
-            .otherwise('/');
+            .otherwise('/intro');
     });

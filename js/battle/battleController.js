@@ -1,48 +1,251 @@
-angular.module('lolApp').controller('battleController',function($scope,$stateParams,battleService) {
-  $scope.playerOne = $stateParams.playerOne;
-  $scope.playerTwo = $stateParams.playerTwo;
+angular.module('lolApp').controller('battleController',function($scope,$stateParams,battleService,$rootScope,$document,$state) {
+  var playerOne = $stateParams.playerOne;
+  var playerTwo = $stateParams.playerTwo;
+  var oneSpellInfo = {};
+  var twoSpellInfo = {};
+  var playerTwoStats;
+  var playerOneStats;
+  var obj;
+  $scope.firstHp = {hp: 100};
+  $scope.firstMana = {mana:100};
+  $scope.secondHp={hp:100};
+  $scope.secondMana={mana:100};
+  // $scope.healthCalc = 100;
 
   $scope.getOneSpellsByID = function() {
-    battleService.getSpellsByID($scope.playerOne).then(function(data) {
-      $scope.playerOneName = data.data.name;
-      $scope.playerOneSpells = data.data.spells;
 
-      $scope.oneImgArray = [];
-      for (var i = 0; i < $scope.playerOneSpells.length; i++) {
-        $scope.oneImgArray.push($scope.playerOneSpells[i].image.full);
+    battleService.getSpellsByID(playerOne).then(function(data) {
+      $scope.playerOneName = data.data.name;
+      var playerOneSpells = data.data.spells;
+      var oneCostArray = [];
+      var oneCdArray = [];
+      var oneEffectArray = [];
+
+      for (var r = 0; r < playerOneSpells.length; r++) {
+        oneEffectArray.push(playerOneSpells[r].effect[1]);
       }
+      for (var i = 0; i < playerOneSpells.length; i++) {
+        oneCdArray.push(playerOneSpells[i].cooldownBurn.split("/"));
+      }
+      for (var j = 0; j < playerOneSpells.length; j++) {
+        oneCostArray.push(playerOneSpells[j].costBurn.split("/"));
+      }
+      $scope.oneImgArray = [];
+      for (var n = 0; n < playerOneSpells.length; n++) {
+        $scope.oneImgArray.push(playerOneSpells[n].image.full);
+      }
+      oneSpellInfo.cd = oneCdArray;
+      oneSpellInfo.cost = oneCostArray;
+      oneSpellInfo.dmg = oneEffectArray;
     });
   };
   $scope.getTwoSpellsByID = function() {
-    battleService.getSpellsByID($scope.playerTwo).then(function(data) {
+    battleService.getSpellsByID(playerTwo).then(function(data) {
       $scope.playerTwoName = data.data.name;
-      $scope.playerTwoSpells = data.data.spells;
-      $scope.twoImgArray = [];
-      for (var i = 0; i < $scope.playerTwoSpells.length; i++) {
-        $scope.twoImgArray.push($scope.playerTwoSpells[i].image.full);
+      var playerTwoSpells = data.data.spells;
+      var twoCostArray=[];
+      var twoCdArray = [];
+      var twoEffectArray=[];
+
+      for (var y = 0; y < playerTwoSpells.length; y++) {
+        twoEffectArray.push(playerTwoSpells[y].effect[1]);
       }
+      for (var j = 0; j < playerTwoSpells.length; j++) {
+        twoCostArray.push(playerTwoSpells[j].costBurn.split("/"));
+      }
+      for (var i = 0; i < playerTwoSpells.length; i++) {
+        twoCdArray.push(playerTwoSpells[i].cooldownBurn.split("/"));
+      }
+
+      $scope.twoImgArray = [];
+      for (var n = 0; n < playerTwoSpells.length; n++) {
+        $scope.twoImgArray.push(playerTwoSpells[n].image.full);
+      }
+
+      twoSpellInfo.cd = twoCdArray;
+      twoSpellInfo.cost = twoCostArray;
+      twoSpellInfo.dmg = twoEffectArray;
     });
   };
 
+
+  setTimeout(function () {
+    console.log(oneSpellInfo);
+    console.log(twoSpellInfo);
+  }, 3000);
   $scope.getOneSpellsByID();
   $scope.getTwoSpellsByID();
 
 
   $scope.getOneBaseStats = function() {
-    battleService.getBaseStats($scope.playerOne).then(function(data) {
-      $scope.playerOneStats = data;
+    battleService.getBaseStats(playerOne).then(function(data) {
+      playerOneStats = data;
+      $scope.oneHp = [];
+      for (var i = 0; i < Math.floor(playerOneStats.hp); i++) {
+        $scope.oneHp.push(i);
+      }
     });
   };
   $scope.getTwoBaseStats = function() {
-    battleService.getBaseStats($scope.playerTwo).then(function(data) {
-      $scope.playerTwoStats = data;
+    battleService.getBaseStats(playerTwo).then(function(data) {
+      playerTwoStats = data;
     });
   };
 
   $scope.getOneBaseStats();
   $scope.getTwoBaseStats();
 
+  $document.bind('keypress',function(e) {
+    $rootScope.$broadcast('keypress',e,String.fromCharCode(e.which));
+  });
+  var qIsPressed = false;
+  var wIsPressed = false;
+  var eIsPressed = false;
+  var rIsPressed = false;
+  var uIsPressed = false;
+  var iIsPressed = false;
+  var oIsPressed = false;
+  var pIsPressed = false;
+  $rootScope.$on('keypress',function(e,a,key) {
+    playerOneStats.mp+=playerOneStats.mpregen;
+    playerTwoStats.mp+=playerTwoStats.mpregen;
+
+    if($scope.firstHp.hp<=0 || $scope.secondHp.hp<=0){
+      console.log("FINISH");
+      if($scope.firstHp.hp<=0)$state.transitionTo('win',{winner:$scope.playerTwoName,loser:$scope.playerOneName});
+      else $state.transitionTo('win',{winner:$scope.playerOneName,loser:$scope.playerTwoName});
+    }
+    switch (a.key) {
+      case "q":
+        if(!qIsPressed) {
+          console.log("HITQ");
+          qIsPressed = true;
+          $scope.$apply(function() {
+            obj =  battleService.calc(oneSpellInfo.dmg[0][0],oneSpellInfo.cost[0][0],playerTwoStats,playerOneStats);
+            $scope.secondHp.hp-=obj.hp;
+            $scope.firstMana.mana-=obj.mana;
+          });
+
+          setTimeout(function() {
+            console.log(playerTwoStats.hp);
+            qIsPressed = false;
+
+          }, oneSpellInfo.cd[0][0]*10);
+        }
+        break;
+      case "w":
+      if(!wIsPressed) {
+        console.log("w");
+        wIsPressed = true;
+
+        $scope.$apply(function() {
+          obj =  battleService.calc(oneSpellInfo.dmg[1][0],oneSpellInfo.cost[1][0],playerTwoStats,playerOneStats);
+          $scope.secondHp.hp-=obj.hp;
+          $scope.firstMana.mana-=obj.mana;
+        });
+
+        setTimeout(function() {
+          wIsPressed = false;
+
+        }, oneSpellInfo.cd[1][0]*1000);
+      }
+        break;
+      case "e":
+      if(!eIsPressed) {
+        console.log("e");
+        eIsPressed = true;
+        $scope.$apply(function() {
+          obj =  battleService.calc(oneSpellInfo.dmg[2][0],oneSpellInfo.cost[2][0],playerTwoStats,playerOneStats);
+          $scope.secondHp.hp-=obj.hp;
+          $scope.firstMana.mana-=obj.mana;
+        });
+
+        setTimeout(function() {
+          eIsPressed = false;
+        }, oneSpellInfo.cd[2][0]*1000);
+      }
+        break;
+      case "r":
+      if(!rIsPressed) {
+        console.log("r");
+        rIsPressed = true;
+        $scope.$apply(function() {
+          obj =  battleService.calc(oneSpellInfo.dmg[3][0],oneSpellInfo.cost[3][0],playerTwoStats,playerOneStats);
+          $scope.secondHp.hp-=obj.hp;
+          $scope.firstMana.mana-=obj.mana;
+        });
+
+
+        setTimeout(function() {
+          rIsPressed = false;
+        }, oneSpellInfo.cd[3][0]*1000);
+      }
+        break;
+        /////
+          case "u":
+            console.log(!uIsPressed);
+            if(!uIsPressed) {
+              console.log("u");
+              uIsPressed = true;
+              //$scope.firstHp.hp-=
+            $scope.$apply(function() {
+              obj = battleService.calc(twoSpellInfo.dmg[0][0],twoSpellInfo.cost[0][0],playerOneStats,playerTwoStats);
+              $scope.firstHp.hp-=obj.hp;
+              $scope.secondMana.mana-=obj.mana;
+            });
+              setTimeout(function() {
+                uIsPressed = false;
+
+              }, twoSpellInfo.cd[0][0]*1000);
+            }
+            break;
+            case "i":
+              if(!iIsPressed) {
+                console.log("i");
+                iIsPressed = true;
+              $scope.$apply(function() {
+                obj = battleService.calc(twoSpellInfo.dmg[1][0],twoSpellInfo.cost[1][0],playerOneStats,playerTwoStats);
+                $scope.firstHp.hp-=obj.hp;
+                $scope.secondMana.mana-=obj.mana;
+              });
+                setTimeout(function() {
+                  iIsPressed = false;
+
+                }, twoSpellInfo.cd[1][0]*1000);
+              }
+              break;
+              case "o":
+                if(!oIsPressed) {
+                  console.log("o");
+                  oIsPressed = true;
+                $scope.$apply(function() {
+                  obj = battleService.calc(twoSpellInfo.dmg[2][0],twoSpellInfo.cost[2][0],playerOneStats,playerTwoStats);
+                  $scope.firstHp.hp-=obj.hp;
+                  $scope.secondMana.mana-=obj.mana;
+                });
+                  setTimeout(function() {
+                    oIsPressed = false;
+
+                  }, twoSpellInfo.cd[2][0]*1000);
+                }
+                break;
+                case "p":
+                  if(!pIsPressed) {
+                    console.log("p");
+                    pIsPressed = true;
+                  $scope.$apply(function() {
+                    obj = battleService.calc(twoSpellInfo.dmg[3][0],twoSpellInfo.cost[3][0],playerOneStats,playerTwoStats);
+                    $scope.firstHp.hp-=obj.hp;
+                    $scope.secondMana.mana-=obj.mana;});
+                    setTimeout(function() {
+                      pIsPressed = false;
+
+                    }, twoSpellInfo.cd[3][0]*1000);
+                  }
+                  break;
+      default:
+        console.log("NOPEg");
+
+    }
+  });
 });
-
-
-//https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion/32?champData=stats&api_key=RGAPI-51fc2f7e-849d-4e46-bc7a-546378e4dac0
