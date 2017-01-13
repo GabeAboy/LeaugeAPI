@@ -4,8 +4,6 @@ angular.module('lolApp').service('battleService',function($http,$q) {
   var deferred = $q.defer();
   $http({
       method: 'GET',
-    //  /api/lol/{region}/v1.2/champion/{id}
-    //https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion/34?champData=spells&api_key=RGAPI-51fc2f7e-849d-4e46-bc7a-546378e4dac0
       url: 'https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion/'+id+'?champData=spells&api_key=RGAPI-51fc2f7e-849d-4e46-bc7a-546378e4dac0'
   }).then(function(response) {
     console.log(response.data.spells);
