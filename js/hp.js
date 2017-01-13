@@ -10,9 +10,10 @@ angular.module('lolApp').directive('healthCalc', function() {
       // console.log('ELEMENT',elem);
 
       scope.$watch('healthCalc', function(newVal) {
-        console.log('CHANGED', newVal);
+        console.log('If im here, $scope.-- used in html changed');
+        // console.log('changed', newVal);
         elem.css('height', newVal +'%');
-        console.log('HEALTHCALC',scope.healthCalc);
+        //console.log('HEALTHCALC',scope.healthCalc);
 
       });
 

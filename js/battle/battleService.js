@@ -29,25 +29,25 @@ return deferred.promise;
 // angular.element()
 
 this.calc = function(data,manaCost,opp,self) {
-  console.log("data",data);
-  console.log("manaCost",manaCost);
-  console.log("opp",opp);
-  console.log("self",self);
+  console.log("Damage of key pressed: ",data);
+  console.log("manaCost of key Pressed: ",manaCost);
+  console.log("opponent data: ",opp);
+  console.log("caster: ",self);
     var damage = (Math.floor(data-opp.armor));
-    console.log('damage',damage);
+    console.log('damage after reducing opponent\'s resistence ',damage);
     // console.log("Hits",penalty);
      if(damage>0&&self.mp>=manaCost){
       var manaRemain = (Math.floor(((self.mp-manaCost)/self.mp)*100)+5);
       var manaUsed = 100-manaRemain;
       var hpRemain = Math.floor(((self.hp-damage)/self.hp)*100);
       var hpUsed = 100-hpRemain;
-      console.log("manaUsed",manaUsed);
-      console.log("hpUsed",hpUsed);
+      console.log("Caster manaUsed in percent: ",manaUsed);
+      console.log("Opponent hp taken in percent: ",hpUsed);
       var obj = {
         hp: hpUsed ,
         mana: manaUsed
       };
-      console.log(obj);
+      console.log("services return object of manaUsed, hpLost",obj);
       return obj;
      }
 

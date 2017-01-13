@@ -111,6 +111,11 @@ angular.module('lolApp').controller('battleController',function($scope,$statePar
     playerTwoStats.mp+=playerTwoStats.mpregen;
 
     if($scope.firstHp.hp<=0 || $scope.secondHp.hp<=0){
+      $scope.firstHp = {hp: 100};
+      $scope.firstMana = {mana:100};
+      $scope.secondHp={hp:100};
+      $scope.secondMana={mana:100};
+
       console.log("FINISH");
       if($scope.firstHp.hp<=0)$state.transitionTo('win',{winner:$scope.playerTwoName,loser:$scope.playerOneName});
       else $state.transitionTo('win',{winner:$scope.playerOneName,loser:$scope.playerTwoName});
@@ -231,7 +236,7 @@ angular.module('lolApp').controller('battleController',function($scope,$statePar
                 break;
                 case "p":
                   if(!pIsPressed) {
-                    console.log("p");
+                    console.log(".p");
                     pIsPressed = true;
                   $scope.$apply(function() {
                     obj = battleService.calc(twoSpellInfo.dmg[3][0],twoSpellInfo.cost[3][0],playerOneStats,playerTwoStats);
@@ -244,7 +249,7 @@ angular.module('lolApp').controller('battleController',function($scope,$statePar
                   }
                   break;
       default:
-        console.log("NOPEg");
+        console.log("Failed to press valid keypress");
 
     }
   });
