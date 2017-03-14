@@ -1,7 +1,8 @@
 body{padding:0;
       margin:0;
     }
-@media(min-width:419px){
+
+@media(min-width:470px){
 
   header{  width:100vw;height:60vh;
 
@@ -51,10 +52,11 @@ body{padding:0;
         height:10px;
 
       }
-      .lineAbove{
+      .liElement{
           display: block;
           color: white;
           text-align: center;
+          height:15px;
 
           text-decoration: none;
 
@@ -67,6 +69,9 @@ body{padding:0;
 
       }
 
+  }
+  .lineAbove{
+    border-top: solid white 1px
   }
 
 
@@ -99,8 +104,11 @@ body{padding:0;
     justify-content: space-around;
     align-items: center;
     border:solid black 2px;
+    overflow: scroll;
     .marginA{
       display: inline-block;
+      margin-bottom: 20px;
+      margin-top: 20px;
 
       #introImg{
         height:100%;
@@ -108,16 +116,23 @@ body{padding:0;
       }
     }
     .pCenter{
+
+      font-size: 20px;
+       font-size: 1.5vw;
           padding: 0;
           margin: 0px;
           width: 60%;
+          height:80%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
     }
   }
 
 }
 }
 //Phone Media
-@media(max-width:300px){
+@media(max-width:469px){
 
   header{  width:100vw;height:100vh;
             display: flex;
@@ -126,7 +141,7 @@ body{padding:0;
             background-color: #edf0f4;
               .cont{
 
-                width:100%;height:251px;
+                width:100%;height:35%;
                 background-image: url('../lolPics/TwistedFate_5.jpeg');
                 background-repeat: no-repeat;
                 background-size:  cover;
@@ -175,9 +190,7 @@ body{padding:0;
                 }
               }
           }
-          intro-data{
-            display: none;
-          }
+          
         }
 
 // body{padding: 0;
