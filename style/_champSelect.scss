@@ -46,5 +46,10 @@
     height:75vh;
     display: flex;
     flex-wrap: wrap;
-    background-color: mistyrose;
+    justify-content: center;
+    background-color: black;
+    overflow-y: scroll;
+    .champSelect img{
+      width:50px;height: 50px;
+    }
   }

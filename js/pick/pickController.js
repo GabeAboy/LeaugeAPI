@@ -9,9 +9,10 @@ angular.module('lolApp').controller('mainCtrl', function($scope, mainService,$st
   $scope.getUsers();
   // $scope.name= champ;
   $scope.lockedIn = false;
+
   $scope.selectChamp = function(champ) {
     if($scope.playerTwo && !$scope.lockedIn)return;
-
+    
     if($scope.lockedIn){
       $scope.playerTwo = champ;//;
     }
