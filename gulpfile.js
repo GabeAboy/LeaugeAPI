@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 
 gulp.task('sass',function() {
+  //'./{foo,bar}/*.scss'
   return gulp.src('./style/main.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))

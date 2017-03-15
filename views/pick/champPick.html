@@ -1,5 +1,23 @@
 <div class = "topContainer">
-  <div id = "header">
+
+<div class="picknStats">
+  <div class="box topLeft">
+    <img class = "pImgBox" ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/champion/{{playerOne.image.full}}" alt="Player1">
+  </div>
+  <div class="box">
+
+  </div>
+  <div class="box">
+    <img id = "versus" src="./lolPics/vs.png" alt="">
+  </div>
+  <div class="box">
+
+  </div>
+  <div class="box topRight">
+      <img class = "pImgBox" ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/champion/{{playerTwo.image.full}}" alt="Player2">
+  </div>
+
+   <!-- <div id = "header">
 
     <div class = "playerBox" id = "playerOne">
       <img class = "pImgBox" ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/champion/{{playerOne.image.full}}" alt="Player1">
@@ -18,10 +36,21 @@
       <button class = "lockIn" ng-click = "lockIn()">LockIn</button>
     </div>
 
+  </div> -->
+  </div>
+  <div class="queryNav">
+
+    <div class="lego">
+      <input ng-model = "champFilter.name" placeholder="Search by name">
+    </div>
+    <div class="lego">
+      <button class = "lockIn" ng-click = "lockIn()">LockIn</button>
+    </div>
+
   </div>
 </div>
 
-<selector id = "champContainer">
+ <selector id = "champContainer">
     <div ng-click = "selectChamp(char)" class = "champSelect" ng-repeat="char in chars | filter: champFilter | orderBy: 'name'">
         <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/champion/{{char.image.full}}" alt="">
     </div>
