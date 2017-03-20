@@ -1,24 +1,85 @@
 
   .container{
-    width:100vw;height:100vh;
-    display: flex;
-    flex-direction: row;
-    .battleLeft{
-    width:50vw;
-    height:100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    .spells{
-      ol{
-        li{
-          display: inline;
-          
+    width: 100vw;height: 100vh;
+    .logo{
+      width:100%;height:10%;
+      background-color: red;
+      display: flex;
+      justify-content: center;
+      .banner{
+        width:50%;
+        height:100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        background-color: blue;
+
+        h2{
+          font-size: 200;
+          margin: 0;
+
         }
       }
     }
+    .bracket{
+    width:100vw;
+    height: 15%;
+    background-color:orange;
+    display: flex;
+    justify-content: center;
+    .current{
+      width:50%;
+      height:100%;
+      background-color: blue;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      #versus{
+        height:30%;width:10%;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+}
+  .action{
+    width:100vw;height:75%;
+    background-color: black;
+    display: flex;
+    .left{width:50%;
+          height:100%;
+          background-color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .frame{
+            height:80%;
+            width:80%;
+            background-color: black;
+          .health{
+            width:10%;
+            height: 100%;
+            background-color: red;
+          }
+          .resource{
+            width:10%;
+            height: 100%;
+            background-color: blue;
+          }
+          .image{
+            width:80%;
+            height:100%;
+            background-color: white;
+          }
+        }
+      }
   }
+
+  .right{
+    width:50%;height:100%;
+    background-color: mistyrose;
+  }
+
 
 
   }
