@@ -1,7 +1,7 @@
 angular.module('lolApp').controller('mainCtrl', function($scope, mainService,$state) {
 
   $scope.getUsers = function() {
-
+//gets called on load and serves the champion ng-repeat
     mainService.getUsers().then(function(data) {
       $scope.chars = data;
     });
@@ -11,8 +11,11 @@ angular.module('lolApp').controller('mainCtrl', function($scope, mainService,$st
   $scope.lockedIn = false;
 
   $scope.selectChamp = function(champ) {
+
+    $scope.selectedData = mainService.getBaseStats(champ.id)
+    console.log($scope.selectedData);
     if($scope.playerTwo && !$scope.lockedIn)return;
-    
+
     if($scope.lockedIn){
       $scope.playerTwo = champ;//;
     }
