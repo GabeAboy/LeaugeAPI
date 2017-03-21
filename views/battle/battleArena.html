@@ -27,21 +27,23 @@
   <div class="left">
     <div class="frame">
       <div class="health">
-          <div health-calc="firstHp.hp" class="health-box">{{firstHp}}</div>
+          <div health-calc="firstHp.hp" class="health-box">{{firstHp.hp}}</div>
       </div>
       <div class="image">
         <img class = "battleImg"  ng-src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{playerOneName}}_0.jpg" alt="Player2">
 
       </div>
       <div class="resource">
-        <div health-calc = "firstMana.mana" class="mana-box">{{firstMana}}</div>
+        <div health-calc = "firstMana.mana" class="mana-box">{{firstMana.mana}}</div>
       </div>
 
     </div>
     <div class="spells">
-      <ol class ='olStable'>
+      <div class="wrapper" ng-repeat='one in oneImgArray'><img ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/spell/{{one}}" alt=""></div>
+      <!-- <ol class ='olStable'>
+
         <li class = "spellList" ng-repeat = "one in oneImgArray"><img ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/spell/{{one}}" alt=""></li>
-      </ol>
+      </ol> -->
     </div>
 
   </div>
@@ -49,20 +51,23 @@
   <div class="left">
     <div class="frame">
       <div class="health">
-          <div health-calc="firstHp.hp" class="health-box">{{secondHp}}</div>
+          <div health-calc="secondHp.hp" class="health-box">{{secondHp.hp}}</div>
       </div>
       <div class="image">
         <img class = "battleImg"  ng-src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{playerTwoName}}_0.jpg" alt="Player2">
 
       </div>
       <div class="resource">
-        <div health-calc = "firstMana.mana" class="mana-box">{{secondMana}}</div>
+        <div health-calc = "secondMana.mana" class="mana-box">{{secondMana.hp}}</div>
       </div>
-      <div class="spells">
-        <ol class ='olStable'>
-          <li class = "spellList" ng-repeat = "one in oneImgArray"><img ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/spell/{{two}}" alt=""></li>
-        </ol>
-      </div>
+
+    </div>
+    <div class="spells">
+      <div class="wrapper" ng-repeat='two in twoImgArray'><img ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/spell/{{two}}" alt=""></div>
+      <!-- <ol class ='olStable'>
+
+        <li class = "spellList" ng-repeat = "one in oneImgArray"><img ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/spell/{{one}}" alt=""></li>
+      </ol> -->
     </div>
 
   </div>
