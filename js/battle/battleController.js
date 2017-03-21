@@ -12,6 +12,18 @@ angular.module('lolApp').controller('battleController',function($scope,$statePar
   $scope.secondMana={mana:100};
   // $scope.healthCalc = 100;
 
+  setInterval(function () {
+    checkThis()
+  }, 1000);
+
+function checkThis() {
+  console.log($scope.firstHp.hp);
+  console.log($scope.firstMana.mana);
+  if($scope.firstHp.hp<100)$scope.firstHp.hp+=5
+  if($scope.firstMana.mana<100)$scope.firstMana.mana+=5
+  if($scope.secondHp.hp<100)$scope.secondHp.hp+=5
+  if($scope.secondMana.mana<100)$scope.secondMana+=5
+}
   $scope.getOneSpellsByID = function() {
 
     battleService.getSpellsByID(playerOne).then(function(data) {
