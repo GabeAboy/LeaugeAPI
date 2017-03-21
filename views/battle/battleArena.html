@@ -26,16 +26,37 @@
 <div class="action">
   <div class="left">
     <div class="frame">
+      <div class="health">
+          <div health-calc="firstHp.hp" class="health-box">{{firstHp}}</div>
+      </div>
+      <div class="image">
+        <img class = "battleImg"  ng-src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{playerOneName}}_0.jpg" alt="Player2">
+
+      </div>
+      <div class="resource">
+        <div health-calc = "firstMana.mana" class="mana-box">{{firstMana}}</div>
+      </div>
+
+    </div>
+    <div class="spells">
+        <li class = "spellList" ng-repeat = "one in oneImgArray"><img ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/spell/{{one}}" alt=""></li>
+    </div>
+
+  </div>
+
+  <div class="left">
+    <div class="frame">
       <div class="health"></div>
       <div class="image">
         <div class="spells"></div>
       </div>
-      <div class="resource"></div>
+      <div class="resource">
+        <div health-calc = "firstMana.mana" class="mana-box">{{firstMana}}</div>
+      </div>
 
     </div>
 
   </div>
-  <div class="right"></div>
 
 </div>
 

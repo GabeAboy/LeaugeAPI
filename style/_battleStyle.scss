@@ -13,15 +13,20 @@
         align-items: flex-end;
         justify-content: center;
         background-color: blue;
-
+        font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+  color: white;
         h2{
-          font-size: 200;
           margin: 0;
-
         }
       }
     }
     .bracket{
+
     width:100vw;
     height: 15%;
     background-color:orange;
@@ -33,8 +38,9 @@
       background-color: blue;
       display: flex;
       flex-direction: row;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
+      padding-top: 10px;
       #versus{
         height:30%;width:10%;
         margin-left: 20px;
@@ -51,25 +57,51 @@
           background-color: white;
           display: flex;
           align-items: center;
+          flex-direction: column;
           justify-content: center;
           .frame{
+            display: flex;
+            display: row;
             height:80%;
             width:80%;
             background-color: black;
+            border:solid black 2px;
           .health{
             width:10%;
             height: 100%;
-            background-color: red;
+            .health-box{
+              background-color: red;
+            }
           }
           .resource{
             width:10%;
             height: 100%;
-            background-color: blue;
+            .mana-box{
+              background-color: blue;
+            }
           }
           .image{
             width:80%;
             height:100%;
             background-color: white;
+            display: flex;
+            align-items: flex-end;
+            .battleImg{
+              width:100%;
+              height: 80%;
+            }
+
+          }
+        }
+        .spells{
+          height:80%;width:100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+
+          li{
+            list-style: none;
+            display: inline;
           }
         }
       }
