@@ -139,22 +139,47 @@
       display: none;
     }
     .mobileContain{
-      
-
       width:100vw;height:100vh;
+      .bracket{
+        width:100%;height: 100%;
+        position: absolute;
+        top:0;
+        left:0;
+        z-index: -10;
 
-      .upper{
-        width:100%;height:30%;
-        background-color: black;
+        .box{
+          width:100%;height:50%;
+        }
+        .top{
+          background-color: black;
+        }
+        .bot{
+          background-color: gray;
+        }
+      }
+      .whereItAt{
+        width:100%;height:100%;
+        display: flex;
+        align-items: center;
+        .bar{
+          width:100vw;height:15px;
+          background-color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .circle{
+            background-color: white;
+            width:50px;height:50px;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            #versus{
+              width:85%;height:85%;
+            }
+          }
+        }
 
-      }
-      .mid {
-        width:100%;height:40%;
-        background-color: red;
-      }
-      .bottom{
-        width:100%;height:30%;
-        background-color: white;
       }
     }
   }
