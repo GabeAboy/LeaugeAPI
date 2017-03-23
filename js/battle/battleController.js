@@ -12,11 +12,22 @@ angular.module('lolApp').controller('battleController',function($scope,$statePar
   $scope.secondMana={mana:100};
   // $scope.healthCalc = 100;
 
-  setInterval(function () {
-    checkThis()
-  }, 1000);
 
+setInterval(function () {
+
+}, 1000);
 function checkThis() {
+  console.log('checked');
+      if($scope.firstHp.hp<=0 || $scope.secondHp.hp<=0){
+        $scope.firstHp = {hp: 100};
+        $scope.firstMana = {mana:100};
+        $scope.secondHp={hp:100};
+        $scope.secondMana={mana:100};
+
+        console.log("FINISH");
+        if($scope.firstHp.hp<=0)$state.transitionTo('win',{winner:$scope.playerTwoName,loser:$scope.playerOneName});
+        else $state.transitionTo('win',{winner:$scope.playerOneName,loser:$scope.playerTwoName});
+      }
   console.log($scope.firstHp.hp);
   console.log($scope.firstMana.mana);
   if($scope.firstHp.hp<100)$scope.firstHp.hp+=5
@@ -119,26 +130,18 @@ function checkThis() {
   var oIsPressed = false;
   var pIsPressed = false;
   $rootScope.$on('keypress',function(e,a,key) {
-    playerOneStats.mp+=playerOneStats.mpregen;
-    playerTwoStats.mp+=playerTwoStats.mpregen;
+    // playerOneStats.mp+=playerOneStats.mpregen;
+    // playerTwoStats.mp+=playerTwoStats.mpregen;
 
-    if($scope.firstHp.hp<=0 || $scope.secondHp.hp<=0){
-      $scope.firstHp = {hp: 100};
-      $scope.firstMana = {mana:100};
-      $scope.secondHp={hp:100};
-      $scope.secondMana={mana:100};
-
-      console.log("FINISH");
-      if($scope.firstHp.hp<=0)$state.transitionTo('win',{winner:$scope.playerTwoName,loser:$scope.playerOneName});
-      else $state.transitionTo('win',{winner:$scope.playerOneName,loser:$scope.playerTwoName});
-    }
     switch (a.key) {
+
       case "q":
         if(!qIsPressed) {
           console.log("HITQ");
           qIsPressed = true;
           $scope.$apply(function() {
-            obj =  battleService.calc(oneSpellInfo.dmg[0][0],oneSpellInfo.cost[0][0],playerTwoStats,playerOneStats);
+            let obj =  battleService.calc(oneSpellInfo.dmg[0][0],oneSpellInfo.cost[0][0],playerTwoStats,playerOneStats);
+            console.log('obj',obj);
             $scope.secondHp.hp-=obj.hp;
             $scope.firstMana.mana-=obj.mana;
           });
@@ -156,7 +159,7 @@ function checkThis() {
         wIsPressed = true;
 
         $scope.$apply(function() {
-          obj =  battleService.calc(oneSpellInfo.dmg[1][0],oneSpellInfo.cost[1][0],playerTwoStats,playerOneStats);
+          let obj =  battleService.calc(oneSpellInfo.dmg[1][0],oneSpellInfo.cost[1][0],playerTwoStats,playerOneStats);
           $scope.secondHp.hp-=obj.hp;
           $scope.firstMana.mana-=obj.mana;
         });
@@ -172,7 +175,7 @@ function checkThis() {
         console.log("e");
         eIsPressed = true;
         $scope.$apply(function() {
-          obj =  battleService.calc(oneSpellInfo.dmg[2][0],oneSpellInfo.cost[2][0],playerTwoStats,playerOneStats);
+          let obj =  battleService.calc(oneSpellInfo.dmg[2][0],oneSpellInfo.cost[2][0],playerTwoStats,playerOneStats);
           $scope.secondHp.hp-=obj.hp;
           $scope.firstMana.mana-=obj.mana;
         });
@@ -187,7 +190,7 @@ function checkThis() {
         console.log("r");
         rIsPressed = true;
         $scope.$apply(function() {
-          obj =  battleService.calc(oneSpellInfo.dmg[3][0],oneSpellInfo.cost[3][0],playerTwoStats,playerOneStats);
+          let obj =  battleService.calc(oneSpellInfo.dmg[3][0],oneSpellInfo.cost[3][0],playerTwoStats,playerOneStats);
           $scope.secondHp.hp-=obj.hp;
           $scope.firstMana.mana-=obj.mana;
         });
@@ -206,7 +209,7 @@ function checkThis() {
               uIsPressed = true;
               //$scope.firstHp.hp-=
             $scope.$apply(function() {
-              obj = battleService.calc(twoSpellInfo.dmg[0][0],twoSpellInfo.cost[0][0],playerOneStats,playerTwoStats);
+              let obj = battleService.calc(twoSpellInfo.dmg[0][0],twoSpellInfo.cost[0][0],playerOneStats,playerTwoStats);
               $scope.firstHp.hp-=obj.hp;
               $scope.secondMana.mana-=obj.mana;
             });
@@ -221,7 +224,7 @@ function checkThis() {
                 console.log("i");
                 iIsPressed = true;
               $scope.$apply(function() {
-                obj = battleService.calc(twoSpellInfo.dmg[1][0],twoSpellInfo.cost[1][0],playerOneStats,playerTwoStats);
+                let obj = battleService.calc(twoSpellInfo.dmg[1][0],twoSpellInfo.cost[1][0],playerOneStats,playerTwoStats);
                 $scope.firstHp.hp-=obj.hp;
                 $scope.secondMana.mana-=obj.mana;
               });
@@ -236,7 +239,7 @@ function checkThis() {
                   console.log("o");
                   oIsPressed = true;
                 $scope.$apply(function() {
-                  obj = battleService.calc(twoSpellInfo.dmg[2][0],twoSpellInfo.cost[2][0],playerOneStats,playerTwoStats);
+                  let obj = battleService.calc(twoSpellInfo.dmg[2][0],twoSpellInfo.cost[2][0],playerOneStats,playerTwoStats);
                   $scope.firstHp.hp-=obj.hp;
                   $scope.secondMana.mana-=obj.mana;
                 });
@@ -251,7 +254,7 @@ function checkThis() {
                     console.log(".p");
                     pIsPressed = true;
                   $scope.$apply(function() {
-                    obj = battleService.calc(twoSpellInfo.dmg[3][0],twoSpellInfo.cost[3][0],playerOneStats,playerTwoStats);
+                    let obj = battleService.calc(twoSpellInfo.dmg[3][0],twoSpellInfo.cost[3][0],playerOneStats,playerTwoStats);
                     $scope.firstHp.hp-=obj.hp;
                     $scope.secondMana.mana-=obj.mana;});
                     setTimeout(function() {
@@ -265,4 +268,7 @@ function checkThis() {
 
     }
   });
+  setInterval(function () {
+    checkThis()
+  }, 1000);
 });
