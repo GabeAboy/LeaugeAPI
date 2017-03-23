@@ -129,10 +129,30 @@
       </div>
     </div> -->
 </div>
+
+
 <div class="mobileContain">
   <div class="bracket">
-    <div class="top box"></div>
-    <div class="box bot"></div>
+    <div class="top">
+      <div class="row spellsList">
+          <div class="wrapper" ng-repeat='one in oneImgArray'><img class ='imgCl'ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/spell/{{one}}" alt=""></div>
+      </div>
+      <div class="row imageSec">
+          <img class = "battleImg"  ng-src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{playerOneName}}_0.jpg" alt="Player2">
+      </div>
+      <div class="row resources">
+        <div health-calc = "firstMana.mana" class="mana-box">{{firstMana.mana}}</div>
+        <div health-calc="firstHp.hp" class="health-box">{{firstHp.hp}}</div>
+      </div>
+<!--
+      <div class="spells"></div>
+      <div class="resource">
+        <div health-calc = "firstMana.mana" class="mana-box">{{firstMana.mana}}</div>
+        <div health-calc="firstHp.hp" class="health-box">{{firstHp.hp}}</div>
+      </div> -->
+
+    </div>
+    <div class="bot"></div>
   </div>
   <div class="whereItAt">
 
