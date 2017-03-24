@@ -152,7 +152,18 @@
       </div> -->
 
     </div>
-    <div class="bot"></div>
+    <div class="bot">
+      <div class="row botResources">
+        <div health-calc="secondHp.hp" class="health-box">{{secondHp.hp}}</div>
+          <div health-calc = "secondMana.mana" class="mana-box">{{secondMana.mana}}</div>
+      </div>
+      <div class="row imageSec">
+        <img class = "battleImg"  ng-src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{playerTwoName}}_0.jpg" alt="Player2">
+      </div>
+      <div class="row spellList">
+          <div class="wrapper" ng-repeat='two in twoImgArray'><img class='imgCl'ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/spell/{{two}}" alt=""></div>
+      </div>
+    </div>
   </div>
   <div class="whereItAt">
 

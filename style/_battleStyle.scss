@@ -218,11 +218,50 @@
               }
             }
           }
-          // .bot{
-          //   background-color: gray;
-          //   width:100%;
-          //   height:50%;
-          // }
+          .bot{
+            background-color: gray;
+            width:100%;
+            height:50%;
+            .row{
+              width:100%;height:33%;
+
+              border: solid white 2px;
+
+            }
+            .botResources{
+              display: flex;
+              align-items: flex-start;
+              justify-content: space-between;
+              .health-box{
+                width:35%;
+                height:50% !important;
+                background-color: red;
+              }
+              .mana-box{
+                width:35%;
+                height:50% !important;
+                background-color: blue;
+              }
+            }
+            .imageSec{
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              .battleImg{
+                width:25%;
+                height: 80%;
+              }
+            }
+            .spellList{
+              display: flex;
+              .wrapper{
+                width: 50%;height: 100%;
+                .imgCl{
+                  width: 100%;height: 100%;
+                }
+              }
+            }
+          }
         }
 
 
