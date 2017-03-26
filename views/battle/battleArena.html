@@ -17,9 +17,9 @@
 
 <div class="bracket">
   <div class="current">
-    {{playerOneName}}
+    <p>{{playerOneName}}</p>
     <img id = "versus" src="./lolPics/vs.png" alt="">
-    {{playerTwoName}}
+    <p>{{playerTwoName}}</p>
   </div>
 </div>
 
@@ -39,7 +39,7 @@
 
     </div>
     <div class="spells">
-      <div class="wrapper" ng-repeat='one in oneImgArray'><img ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/spell/{{one}}" alt=""></div>
+      <div class="wrapper" ng-repeat='one in oneImgArray'><img class = 'battleImg' ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/spell/{{one}}" alt=""></div>
       <!-- <ol class ='olStable'>
 
         <li class = "spellList" ng-repeat = "one in oneImgArray"><img ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/spell/{{one}}" alt=""></li>
@@ -63,7 +63,7 @@
 
     </div>
     <div class="spells">
-      <div class="wrapper" ng-repeat='two in twoImgArray'><img ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/spell/{{two}}" alt=""></div>
+      <div class="wrapper" ng-repeat='two in twoImgArray'><img  class = 'battleImg' ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/spell/{{two}}" alt=""></div>
       <!-- <ol class ='olStable'>
 
         <li class = "spellList" ng-repeat = "one in oneImgArray"><img ng-src="http://ddragon.leagueoflegends.com/cdn/6.23.1/img/spell/{{one}}" alt=""></li>

@@ -12,6 +12,9 @@ angular.module('lolApp').controller('battleController',function($scope,$statePar
   $scope.secondMana={mana:100};
   // $scope.healthCalc = 100;
 
+$scope.printThis = function() {
+  console.log('hello world');
+}
 
 setInterval(function () {
 

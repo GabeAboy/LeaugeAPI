@@ -11,7 +11,7 @@
       display: flex;
       justify-content: center;
       padding-bottom: 10px;
-
+      background-color: #203e70;
       .banner{
         width:50%;
         height:100%;
@@ -25,6 +25,7 @@
       	font-variant: normal;
       	font-weight: 500;
       	line-height: 26.4px;
+
         color:black;
         h2{
           margin: 0;
@@ -35,22 +36,32 @@
 
     width:100vw;
     height: 15%;
-    background-color:orange;
+    background-color:#203e70;
     display: flex;
     justify-content: center;
+    align-items: center;
     .current{
       width:50%;
-      height:100%;
-      background-color: blue;
+      height:70%;
+      background-color: #0747b2;
       display: flex;
       flex-direction: row;
       align-items: flex-start;
       justify-content: center;
       padding-top: 10px;
+      box-shadow: 10px 10px 10px #808389;
+      font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+      p{
+        color:white;
+        padding: 0;
+        margin:0;
+        }
+      }
       #versus{
-        height:30%;width:10%;
+        height:65%;width:15%;
         margin-left: 20px;
         margin-right: 20px;
+
       }
     }
 }
@@ -60,7 +71,7 @@
     display: flex;
     .left{width:50%;
           height:100%;
-          background-color: white;
+          background-color: #203e70;
           display: flex;
           align-items: center;
           flex-direction: column;
@@ -76,7 +87,7 @@
             width:15%;
             height: 100%;
             .health-box{
-              background-color: red;
+              background-color: #8c1715;
               display: flex;
               justify-content: center;
               color:white;
@@ -87,7 +98,7 @@
             width:15%;
             height: 100%;
             .mana-box{
-              background-color: blue;
+              background-color: #0747b2;
               display: flex;
               justify-content: center;
 
@@ -99,7 +110,7 @@
           .image{
             width:80%;
             height:100%;
-            background-color: white;
+            background-color: black;
             display: flex;
             justify-content: center;
             .battleImg{
@@ -114,12 +125,15 @@
           display: flex;
           align-items: flex-start;
           justify-content: center;
-          padding-top: 10px;
+
               .wrapper{
-                border: yellow solid 2px;
-                width:25%;height:100%;
+                border: black solid 2px;
+                width:25%;height:90%;
                 display: flex;
                 flex-wrap: wrap;
+                .battleImg{
+                  width: 100%;height: 100%;
+                }
               }
                 // .olStable{
                 //   margin: 0;
@@ -133,7 +147,7 @@
         }
       }
   }
-}
+
   @media(max-width:300px){
     .container{
       display: none;
@@ -199,11 +213,11 @@
                 .mana-box{
                   width:35%;
                   height:50% !important;
-                  background-color: blue;
+                  background-color: #0747b2;
                 }
                 .health-box{
                   width:35%;height:50% !important;
-                  background-color: red;
+                  background-color: #8c1715;
 
                 }
             }
@@ -237,12 +251,12 @@
               .health-box{
                 width:35%;
                 height:50% !important;
-                background-color: red;
+                background-color: #8c1715;
               }
               .mana-box{
                 width:35%;
                 height:50% !important;
-                background-color: blue;
+                background-color: #0747b2;
               }
             }
             .imageSec{
