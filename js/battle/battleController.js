@@ -243,6 +243,7 @@ function checkThis() {
                   oIsPressed = true;
                 $scope.$apply(function() {
                   let obj = battleService.calc(twoSpellInfo.dmg[2][0],twoSpellInfo.cost[2][0],playerOneStats,playerTwoStats);
+                  console.log(obj,'sdfsdfsdfsdfsdf');
                   $scope.firstHp.hp-=obj.hp;
                   $scope.secondMana.mana-=obj.mana;
                 });
@@ -258,6 +259,7 @@ function checkThis() {
                     pIsPressed = true;
                   $scope.$apply(function() {
                     let obj = battleService.calc(twoSpellInfo.dmg[3][0],twoSpellInfo.cost[3][0],playerOneStats,playerTwoStats);
+                    console.log(obj,"asdasdasdasd");
                     $scope.firstHp.hp-=obj.hp;
                     $scope.secondMana.mana-=obj.mana;});
                     setTimeout(function() {

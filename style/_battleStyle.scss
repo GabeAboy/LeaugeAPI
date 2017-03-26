@@ -49,7 +49,7 @@
       align-items: flex-start;
       justify-content: center;
       padding-top: 10px;
-      box-shadow: 10px 10px 10px #808389;
+      box-shadow: 10px 10px 10px #0b1c49;
       font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
       p{
         color:white;
@@ -86,7 +86,9 @@
           .health{
             width:15%;
             height: 100%;
+
             .health-box{
+              transform: rotate(180deg);
               background-color: #8c1715;
               display: flex;
               justify-content: center;
@@ -100,6 +102,7 @@
             .mana-box{
               background-color: #0747b2;
               display: flex;
+              transform: rotate(180deg);
               justify-content: center;
 
               color:white;
@@ -213,10 +216,12 @@
                 .mana-box{
                   width:35%;
                   height:50% !important;
+
                   background-color: #0747b2;
                 }
                 .health-box{
                   width:35%;height:50% !important;
+
                   background-color: #8c1715;
 
                 }
