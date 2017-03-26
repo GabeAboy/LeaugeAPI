@@ -188,7 +188,7 @@
               align-items: center;
               justify-content: center;
               .battleImg{
-                width:25%;height:80%;
+                width:25%;height:100%;
                 transform: rotate(180deg);
               }
             }
@@ -209,11 +209,13 @@
             }
             .spellsList{
               display: flex;
+              justify-content: center;
+              align-items: center;
               .wrapper{
                 transform: rotate(180deg);
-                width:50%;height:100%;
+                width:45px;height:45px;
                 .imgCl{
-                  width:100%;height:100%;
+                  width:40px;height:40px;
                 }
               }
             }
@@ -249,13 +251,16 @@
               justify-content: center;
               .battleImg{
                 width:25%;
-                height: 80%;
+                height: 100%;
               }
             }
             .spellList{
               display: flex;
+              justify-content: center;
+              align-items: center;
+
               .wrapper{
-                width: 50%;height: 100%;
+                width: 45pxq;height: 45px;
                 .imgCl{
                   width: 100%;height: 100%;
                 }
