@@ -1,0 +1,42 @@
+.victory{width:100vw;height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          align-items: center;
+          background-image: url('../lolPics/grid.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+  .upper{height: 80%;width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .contain{
+      width: 50%;height: 80%;
+      color: white;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+          .vicbox{
+            width: 40%;height: 70%;
+          }
+      }
+    }
+
+      footer{
+        width: 100vw;height: 20%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .btn{
+          width: 100px;
+          height: 50px;
+          background-color: yellow;
+          font-size: 20px;
+          cursor: pointer;
+        }
+      }
+}

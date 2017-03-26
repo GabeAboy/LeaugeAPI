@@ -1,10 +1,21 @@
 <div class="victory">
 
-  <div class="img">
-    <img class = "vic vicbox"  ng-src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{winner}}_0.jpg" alt="Player2">
-    <img class = "los vicbox"  ng-src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{loser}}_0.jpg" alt="Player2">
-  </div>
+
+  <div class="upper">
+    <div class='contain'>
+      <h1>Victorious</h1>
+      <img class = "vic vicbox"  ng-src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{winner}}_0.jpg" alt="Player2">
+    </div>
+    <div class='contain'>
+      <h1>Failure</h1>
+      <img class = "los vicbox"  ng-src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{loser}}_0.jpg" alt="Player2">
+    </div>
 </div>
+<footer>
+    <button ui-sref='intro' class ='btn'>Home</button>
+</footer>
+</div>
+
 <!-- <victory class = "victory">
   <div class="vicContain">
 
