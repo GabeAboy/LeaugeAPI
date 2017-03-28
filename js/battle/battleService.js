@@ -34,7 +34,7 @@ this.calc = function(data,manaCost,opp,self) {
     var damage = (Math.floor(data-opp.armor));
     console.log('damage after reducing opponent\'s resistence ',damage);
     // console.log("Hits",penalty);
-    if(damage<=0)damage
+    if(damage<=0)damage=1
      if(damage>0&&self.mp>=manaCost){
       var manaRemain = (Math.floor(((self.mp-manaCost)/self.mp)*100)+5);
       var manaUsed = 100-manaRemain;

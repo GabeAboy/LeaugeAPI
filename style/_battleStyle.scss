@@ -86,7 +86,8 @@
           .health{
             width:15%;
             height: 100%;
-
+            display: flex;
+            align-items: flex-end;
             .health-box{
 
               background-color: #8c1715;
@@ -94,19 +95,24 @@
               justify-content: center;
               color:white;
               height: 95%;
+              width: 100%
             }
           }
           .resource{
             width:15%;
             height: 100%;
+            display: flex;
+            align-items: flex-end;
+
             .mana-box{
               background-color: #0747b2;
               display: flex;
-              transform: rotate(180deg);
+              // transform: rotate(180deg);
               justify-content: center;
 
               color:white;
               height:95%;
+              width:100%;
 
             }
           }

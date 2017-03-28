@@ -10,16 +10,14 @@ angular.module('lolApp').controller('battleController',function($scope,$statePar
   $scope.firstMana = {mana:100};
   $scope.secondHp={hp:100};
   $scope.secondMana={mana:100};
-  //$scope.healthCalc = 100;
-
-$scope.printThis = function() {
-  console.log('hello world');
-}
-
-setInterval(function () {
-
-}, 1000);
+  setInterval(function () {
+    checkThis()
+  }, 1000);
 function checkThis() {
+  if($scope.firstHp.hp<100)$scope.firstHp.hp+=2
+  if($scope.firstMana.mana<100)$scope.firstMana.mana+=2
+  if($scope.secondHp.hp<100)$scope.secondHp.hp+=2
+  if($scope.secondMana.mana<100)$scope.secondMana.mana+=2
   console.log('checked');
       if($scope.firstHp.hp<=0 || $scope.secondHp.hp<=0){
         $scope.firstHp = {hp: 100};
@@ -33,10 +31,7 @@ function checkThis() {
       }
   console.log($scope.firstHp.hp);
   console.log($scope.firstMana.mana);
-  if($scope.firstHp.hp<100)$scope.firstHp.hp+=5
-  if($scope.firstMana.mana<100)$scope.firstMana.mana+=5
-  if($scope.secondHp.hp<100)$scope.secondHp.hp+=5
-  if($scope.secondMana.mana<100)$scope.secondMana.mana+=5
+
 }
   $scope.getOneSpellsByID = function() {
 
@@ -273,7 +268,5 @@ function checkThis() {
 
     }
   });
-  setInterval(function () {
-    checkThis()
-  }, 1000);
+
 });
