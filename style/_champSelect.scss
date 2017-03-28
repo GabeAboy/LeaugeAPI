@@ -9,6 +9,9 @@
       height: 80%;
       width: 100%;
       display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color:#0747b2;
         .topLeft{
           display: flex;
           justify-content: flex-start;
@@ -21,10 +24,10 @@
         }
 
         .box{
-          width:20%;height: 100%;
+          width:100px;height: 100px;
           background-color: #0747b2;
           .pImgBox{
-            width: 100px;height: 100px;
+            width: 100%;height: 100%;
             background-color: #0b1c49;
           }
           #versus{
@@ -50,6 +53,30 @@
     background-color: black;
     overflow-y: scroll;
     .champSelect img{
+      width:50px;height: 50px;
+    }
+  }
+  @media(max-width:600px){
+  .topContainer .picknStats .box{
+      width:80px;height: 80px;
+    }
+  }
+  @media(max-width:500px){
+  .topContainer .picknStats .box{
+      width:60px;height: 60px;
+    }
+  }
+  @media(max-width:300px){
+    .topContainer .picknStats{
+      height: 80%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      background-color:#0747b2;
+
+    }
+  .topContainer .picknStats .box{
       width:50px;height: 50px;
     }
   }
