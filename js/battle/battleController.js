@@ -14,11 +14,14 @@ angular.module('lolApp').controller('battleController',function($scope,$statePar
     checkThis()
   }, 1000);
 function checkThis() {
-  if($scope.firstHp.hp<100)$scope.firstHp.hp+=2
-  if($scope.firstMana.mana<100)$scope.firstMana.mana+=2
-  if($scope.secondHp.hp<100)$scope.secondHp.hp+=2
-  if($scope.secondMana.mana<100)$scope.secondMana.mana+=2
-  console.log('checked');
+  $scope.$apply(function() {
+    if($scope.firstHp.hp<100)$scope.firstHp.hp+=2
+    if($scope.firstMana.mana<100)$scope.firstMana.mana+=2
+    if($scope.secondHp.hp<100)$scope.secondHp.hp+=2
+    if($scope.secondMana.mana<100)$scope.secondMana.mana+=2
+    console.log('checked');
+  })
+
       if($scope.firstHp.hp<=0 || $scope.secondHp.hp<=0){
         $scope.firstHp = {hp: 100};
         $scope.firstMana = {mana:100};
